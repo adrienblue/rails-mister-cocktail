@@ -1,7 +1,7 @@
 
-
+<div class="container">
 <ul>
-  <li> <%= @cocktail.name %> </li>
+  <li> <h1><%= @cocktail.name %> </h1></li>
 
   <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
@@ -11,13 +11,14 @@
 <hr>
   <ul>
     <% @cocktail.doses.each do |dose|  %>
-      <li><%= dose.description %> <%= dose.ingredient.name %><%= link_to " delete", dose_path(dose), method: :delete %></li>
+      <li><%= dose.description %> <%= dose.ingredient.name %><%= link_to " delete", dose_path(dose), method: :delete, class:"btn-treehouse" %></li>
     <% end %>
   </ul>
-
 
     <hr>
   <li> <%= link_to "back to the list", cocktails_path %></li>
 </ul>
+
+</div>
 
 <hr>
